@@ -19,6 +19,7 @@ $('document').ready(function () {
 
     function updateAmenityList() {
         let amenityKeys = Object.keys(amenityIdDict);
-        $('#amenityList').text(amenityKeys.join(', '));
+        fullHtml = amenityKeys.join(', ') + '&nbsp;';
+        $('#amenityList').html(fullHtml);
     }
 });
