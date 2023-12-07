@@ -2,10 +2,23 @@
 // This function listens to the amenities input boxes, and saves the id
 // of each checked box
 
-const amenityIdList = [];
+const amenityIdDict = {};
 $('document').ready(function () {
-    $("#checkBoxes").on('change', function () {
-        const amenityId = $(this).data('id')
-        console.log(amenityId)
+    $('li input[type="checkbox"]').on('change', function () {
+        const amenityId = $(this).attr('data-id')
+        const amenityName = $(this).attr('data-name')
+        console.log("Amenit Name:" + amenityName)
+        if (amenityIdDict.hasOwnProperty(amenityName)) { // If its already in list
+            delete amenityIdDict[amenityName]
+        } else {
+         amenityIdDict[amenityName] = amenityId;
+        }
+        // console.log("amenity list:" + JSON.stringify(amenityIdDict)) // Check that list methods work
+        updateAmenityList();
     });
+
+    function updateAmenityList() {
+        let amenityKeys = Object.keys(amenityIdDict);
+        $('#amenityList').text(amenityKeys.join(', '));
+    }
 });
