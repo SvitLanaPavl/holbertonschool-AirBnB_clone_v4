@@ -21,6 +21,6 @@ header #api_status {
     transform: translateY(-50%);
 }
 
-.available {
+#api_status.available {
     background-color: #ff545f;
 }
