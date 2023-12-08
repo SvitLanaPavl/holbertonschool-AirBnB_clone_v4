@@ -51,6 +51,15 @@ button:hover {
     width: 25%;
 }
 
+.amenities #amenityList {
+    height: 15px;
+    width: 75%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
 .popover {
     visibility: hidden;
     width: 100%;

@@ -10,7 +10,7 @@
     <link rel="icon" href="../static/images/icon.png" />
     <title>HBnB</title>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="../static/scripts/2-hbnb.js"></script>
+	<script type="text/javascript" src="../static/scripts/2-hbnb.js?{{ cache_id }}"></script>
 
   </head>
   <body>
@@ -40,12 +40,11 @@
 	</div>
 	<div class="amenities">
 	  <h3>Amenities</h3>
-	  <h4>&nbsp;</h4>
+	  <h4 id="amenityList">&nbsp;</h4>
 	  <div class="popover">
 	    <ul>
 	      {% for amenity in amenities %}
-	      <li><input type="checkbox" id="checkBoxes" style="margin-right: 10px;" data-id=":amenity_id" data-name=":amenity_name">
-			{{ amenity.name }}</li>
+	      <li><input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}" style="margin-right: 10px;">{{ amenity.name }}</li>
 	      {% endfor %}
 	    </ul>
 	  </div>
