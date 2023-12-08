@@ -66,14 +66,14 @@ $('document').ready(function () {
   // Task 5. Grabbing the button and displaying the places_search
   $('button').on('click', () => {
     const amenityIds = Object.values(amenityIdDict);
-
+    console.log(amenityIds);
     $.ajax({
       url: baseUrl + ':5001/api/v1/places_search/',
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
       dataType: 'json',
-      data: JSON.stringify({amenityIds}),
+      data: JSON.stringify({amenities: amenityIds}),
       success: (data) => {
         $('SECTION.places').empty();
         $('SECTION.places').append(data.map(place => {
@@ -91,8 +91,9 @@ $('document').ready(function () {
               ${place.description}
             </div>
           </article>`;
-        }))
+        }));
       }
-    })
-  })
+    });
+    console.log($('.places').children());
+  });
 });
