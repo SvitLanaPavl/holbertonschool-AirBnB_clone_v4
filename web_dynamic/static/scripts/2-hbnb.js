@@ -23,15 +23,14 @@ $('document').ready(function () {
         $('#amenityList').html(fullHtml);
     }
     $.ajax({
-      url: 'http://0.0.0.0:5001/api/v1/status/',
+      url: 'http://' + window.location.hostname +':5001/api/v1/status/',
       type: 'GET',
       success: (data) => {
         if (data.status == 'OK') {
           $('div#api_status').addClass('available');
         } else {
-          $('div#api_status').removeClass('available'); 
+          $('div#api_status').removeClass('available');
         }
       }
     });
 });
-
