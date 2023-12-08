@@ -32,6 +32,6 @@ $('document').ready(function () {
           $('div#api_status').removeClass('available'); 
         }
       }
-    })
+    });
 });
 
