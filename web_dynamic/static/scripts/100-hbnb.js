@@ -82,8 +82,12 @@ $('.cityCheck').on('change', function () {
 // Adds the current state or city's dict names to the h4 box of Amenties div
 function updateCityStateList() {
     let stateKeys = Object.keys(stateIdDict);
-    let cityKeys = Object.keys(cityIdDict)
-    fullHtml = cityKeys.join(', ') + stateKeys.join(', ') + '&nbsp;';
+    let cityKeys = Object.keys(cityIdDict);
+    if (cityKeys.length > 0 && stateKeys.length > 0) {
+      fullHtml = cityKeys.join(', ') + ', ' + stateKeys.join(', ') + '&nbsp;';
+    } else {
+      fullHtml = cityKeys.join(', ') + stateKeys.join(', ') + '&nbsp;';
+    }
     $('#cityStateList').html(fullHtml);
 };
 
