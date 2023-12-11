@@ -26,8 +26,8 @@
 	  <div class="popover">
 	    <ul>
 	      {% for state in states %}
-	      <li><input type="checkbox" class="stateCheck" data-id="{{ state[0].id }}" data-name="{{ state[0].name }}" style="margin-right: 10px;">
-		<h2>{{ state[0].name }}:</h2>
+	      <li><span style="display: flex"><input type="checkbox" class="stateCheck" data-id="{{ state[0].id }}" data-name="{{ state[0].name }}" style="margin-right: 10px; margin-bottom: 10px;">
+		<h2>{{ state[0].name }}:</h2></span>
 		<ul>
 		  {% for city in state[1] %}
 		  <li><input type="checkbox" class="cityCheck" data-id="{{ city.id }}" data-name="{{ city.name }}" style="margin-right: 10px;">{{ city.name }}</li>
