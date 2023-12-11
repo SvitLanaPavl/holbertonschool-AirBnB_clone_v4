@@ -59,6 +59,13 @@ button:hover {
     white-space: nowrap;
 }
 
+.locations #cityStateList {
+    height: 15px;
+    width: 80%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; 
+}
 
 .popover {
     visibility: hidden;
